@@ -1,0 +1,38 @@
+$pink: rgb(253, 136, 136);
+$black: #111;
+$gray: #999;
+#app {
+  color: #2c3e50;
+  height: 100%;
+}
+.show-shadow {
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.5);
+}
+.mainContent{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // height: 100%;
+  // color: white;
+  box-sizing: border-box;
+  flex: 1;
+  .M-title h2{
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    padding: 0 40px;
+    font-size: 24px;
+    color: $black;
+    border-bottom: 1px solid $gray;
+  }
+  .M-content{
+    padding: 20px;
+    margin: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: auto;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+  }
+}
