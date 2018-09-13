@@ -15,7 +15,8 @@
             </el-select>
           </el-form-item>
           <el-form-item label="文章内容">
-            <quill-edit editorContent="testText" @changeContent="changeContent"></quill-edit>
+            <!-- <quill-edit editorContent="testText" @changeContent="changeContent"></quill-edit> -->
+            <editor id="tinymce" v-model="tinymceHtml" :init="editorInit"></editor>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="onSubmit">保存配置</el-button>
@@ -27,11 +28,23 @@
 </template>
 
 <script>
-import quillEdit from '../common/quilledit.vue'
-export default ({
+// import quillEdit from '../common/quilledit.vue'
+import tinymce from 'tinymce/tinymce'
+import 'tinymce/themes/modern/theme'
+import Editor from '@tinymce/tinymce-vue'
+import 'tinymce/plugins/image'
+import 'tinymce/plugins/link'
+import 'tinymce/plugins/code'
+import 'tinymce/plugins/table'
+import 'tinymce/plugins/lists'
+import 'tinymce/plugins/contextmenu'
+import 'tinymce/plugins/wordcount'
+import 'tinymce/plugins/colorpicker'
+import 'tinymce/plugins/textcolor'
+export default {
   name: 'love',
   components: {
-    quillEdit
+    Editor
   },
   data () {
     return {
@@ -40,8 +53,18 @@ export default ({
         title: '',
         module: ''
       },
-      content: '<h1>Hello World</h1>'
+      tinymceHtml: '',
+      editorInit: {
+        language_url: '/static/tinymce/zh_CN.js',
+        language: 'zh_CN',
+        skin_url: '/static/tinymce/skins/lightgray',
+        height: 300,
+        plugins: 'link lists image code table colorpicker textcolor wordcount contextmenu'
+      }
     }
+  },
+  mounted () {
+    tinymce.init({})
   },
   methods: {
     onSubmit (content) {
@@ -51,24 +74,24 @@ export default ({
       console.log(msg)
     }
   }
-})
+}
 </script>
 
-<style lang="scss" scoped>
-  .carousel-Box{
-    width: 70%;
-    margin: 0 auto;
-    .el-carousel__item h3 {
-      color: #475669;
-      font-size: 18px;
-      opacity: 0.75;
-      margin: 0;
-    }
-    .el-carousel__item:nth-child(2n) {
-     background-color: #99a9bf;
-    }
-    .el-carousel__item:nth-child(2n+1) {
-     background-color: #d3dce6;
-    }
+<style lang='scss' scoped>
+.carousel-Box {
+  width: 70%;
+  margin: 0 auto;
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    margin: 0;
   }
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+  .el-carousel__item:nth-child(2n + 1) {
+    background-color: #d3dce6;
+  }
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-container>
+    <el-container v-if="this.$route.path != '/404' && this.$route.path != '/login'">
       <el-header style="padding: 0" height='60px'>
         <router-view name="Header"></router-view>
       </el-header>
@@ -10,7 +10,9 @@
         <router-view name="menuNav"></router-view>
       </el-aside>
       <el-main style="padding: 0">
-        <router-view name="main"></router-view>
+        <transition name = "routerTransition" mode="out-in">
+          <router-view name="main"></router-view>
+        </transition>
       </el-main>
     </el-container>
   </div>
@@ -23,5 +25,11 @@ export default {
 </script>
 
 <style lang='scss'>
-@import './static/css/app.scss'
+@import './static/css/app.scss';
+.routerTransition-enter-active, .routerTransition-leave-active {
+  transition: opacity .5s;
+}
+.routerTransition-enter, .routerTransition-leave-to {
+  opacity: 0;
+}
 </style>

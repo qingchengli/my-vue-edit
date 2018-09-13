@@ -14,7 +14,11 @@
     "electron_build": "electron-packager ./dist/ --platform=win32 --arch=x64 --icon=./src/assets/dog.ico --overwrite"
   },
   "dependencies": {
+    "@tinymce/tinymce-vue": "^1.0.9",
+    "axios": "^0.18.0",
+    "echarts": "^4.1.0",
     "element-ui": "^2.4.6",
+    "tinymce": "^4.8.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue2-editor": "^2.6.6"

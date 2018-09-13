@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <img src="../../../static/imgs/logo.png" alt=""/>
-    <h2 class="system">圣诞老人智能管理系统</h2>
+    <h2 class="system">大白智能管理系统</h2>
   </div>
 </template>
 
@@ -17,8 +17,8 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-$color: #ffda74;
-$baclground-color: #545c64;
+$color: white;
+$baclground-color: #c12529;
 .header {
   height: 60px;
   line-height: 60px;
@@ -26,11 +26,13 @@ $baclground-color: #545c64;
   color: $color;
   padding: 0 30px;
   font-family: 'Microsoft YaHei';
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
   img{
     width: 60px;
     height: 60px;
     vertical-align: middle;
-    margin-bottom: 2px;
+    margin-bottom: 8px;
+    margin-right: 20px;
   }
   h2{
     font-size: 24px;
