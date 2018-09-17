@@ -16,18 +16,30 @@
 export default {
   name: 'home',
   data () {
-    return {}
+    return {
+      title1: `${this.$t('message.title1')}`
+    }
   },
   mounted () {
     this.drawLine()
     this.drawPie()
+  },
+  computed: {
+    title () {
+      return this.$t('message.title1')
+    }
+  },
+  watch: {
+    title () {
+      this.drawLine()
+    }
   },
   methods: {
     drawLine () {
       let myChart = this.$echarts.init(this.$refs.lineBox)
       let option = {
         title: {
-          text: '访问人数类型及数量走向',
+          text: this.title,
           x: 'center'
         },
         tooltip: {

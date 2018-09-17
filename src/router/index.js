@@ -7,6 +7,8 @@ import life from '@/components/page/life'
 import love from '@/components/page/love'
 import error from '@/components/Common/error'
 import login from '@/components/Common/login'
+import tank from '@/components/page/tank'
+import plane from '@/components/page/plane'
 
 Vue.use(Router)
 
@@ -56,6 +58,30 @@ const route = new Router({
       },
       meta: {
         title: '新闻编辑'
+      }
+    },
+    {
+      path: '/tank',
+      name: 'tank',
+      components: {
+        Header: commonHeader,
+        menuNav: menuNav,
+        main: tank
+      },
+      meta: {
+        title: '坦克'
+      }
+    },
+    {
+      path: '/plane',
+      name: 'plane',
+      components: {
+        Header: commonHeader,
+        menuNav: menuNav,
+        main: plane
+      },
+      meta: {
+        title: '战机'
       }
     },
     {

@@ -9,6 +9,8 @@ import echarts from 'echarts'
 import 'element-ui/lib/theme-chalk/index.css'
 import '../static/css/reset.css'
 import './element-variables.scss'
+import i18n from './i18n/lang'
+import store from './vuex'
 
 /* eslint-disable no-new */
 Vue.config.productionTip = false
@@ -20,6 +22,8 @@ Vue.prototype.$echarts = echarts
 new Vue({
   el: '#app',
   router,
+  i18n,
+  store,
   components: { App },
   template: '<App/>'
 })
