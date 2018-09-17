@@ -10,7 +10,7 @@
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="zh">简体中文</el-dropdown-item>
-          <el-dropdown-item command="tw">繁体中文</el-dropdown-item>
+          <el-dropdown-item command="tw">繁體中文</el-dropdown-item>
           <el-dropdown-item command="en">English</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>

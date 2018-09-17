@@ -9,7 +9,8 @@ const tw = {
     army: '軍事',
     title1: '訪問人數及趨勢',
     tank: '坦克',
-    plane: '戰機'
+    plane: '戰機',
+    tankWorld: '坦克世界'
   }
 }
 

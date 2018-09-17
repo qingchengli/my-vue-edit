@@ -1,6 +1,10 @@
 <template>
   <div>
-    {{ test }}
+    <div class="mainContent">
+      <div class="M-title">
+        <h2>{{ $t("message.tankWorld") }}</h2>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -9,7 +13,6 @@ export default ({
   name: 'tank',
   data () {
     return {
-      test: 123
     }
   }
 })

@@ -9,7 +9,8 @@ const zh = {
     army: '军事',
     title1: '访问人数及趋势',
     tank: '坦克',
-    plane: '战机'
+    plane: '战机',
+    tankWorld: '坦克世界'
   }
 }
 

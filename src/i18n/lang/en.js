@@ -9,7 +9,8 @@ const en = {
     army: 'army',
     title1: 'Num and Trend',
     tank: 'Tank',
-    plane: 'Plane'
+    plane: 'Plane',
+    tankWorld: 'World Of Tank'
   }
 }
 
