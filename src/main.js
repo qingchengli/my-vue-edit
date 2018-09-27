@@ -11,6 +11,7 @@ import '../static/css/reset.css'
 import './element-variables.scss'
 import i18n from './i18n/lang'
 import store from './vuex'
+import './assets/icon/iconfont.js'
 
 /* eslint-disable no-new */
 Vue.config.productionTip = false

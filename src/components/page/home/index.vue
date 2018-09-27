@@ -4,6 +4,25 @@
       <h2>首页</h2>
     </div>
     <div class='M-content'>
+      <div class="tinBox">
+        <el-row style="width: 100%; margin: 30px 0;" :gutter="20" type="flex" justify="center">
+          <el-col :span="5" v-for="item in 4" :key="item">
+            <el-card shadow="hover" :body-style="{ padding: '10px' }">
+              <el-row :gutter="5">
+                <el-col :span="6" style="margin-top: 10px; text-align: center;">
+                  <svg class="icon" aria-hidden="true" :style="{fontSize: Cursize}">
+                    <use xlink:href="#icon-jiankang-"></use>
+                  </svg>
+                </el-col>
+                <el-col :span="16">
+                  <h2>娱乐</h2>
+                  <p>娱乐</p>
+                </el-col>
+              </el-row>
+            </el-card>
+          </el-col>
+        </el-row>
+      </div>
       <div class='ChartBox'>
         <div class='lineBox' ref='lineBox'></div>
         <div class='pieBox' ref='pieBox'></div>
@@ -17,16 +36,21 @@ export default {
   name: 'home',
   data () {
     return {
-      title1: `${this.$t('message.title1')}`
+      title1: `${this.$t('message.title1')}`,
+      oldsize: 20
     }
   },
   mounted () {
     this.drawLine()
     this.drawPie()
+    this.pengpeng()
   },
   computed: {
     title () {
       return this.$t('message.title1')
+    },
+    Cursize () {
+      return this.oldsize + 'px'
     }
   },
   watch: {
@@ -139,12 +163,30 @@ export default {
         }
       }
       myChart.setOption(option)
+    },
+    pengpeng () {
+      var step = 1
+      var timer = setInterval(() => {
+        if (this.oldsize === 36) {
+          step = -1
+        } else if (this.oldsize === 20) {
+          step = 1
+        }
+        this.oldsize += step
+      }, 30)
     }
   }
 }
 </script>
 
 <style lang='scss' scoped>
+.tinBox{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 8px;
+}
 .ChartBox {
   display: flex;
   flex-direction: row;

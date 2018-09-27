@@ -69,6 +69,7 @@ $baclground-color: #c12529;
     font-size: 24px;
     letter-spacing: 2px;
     display: inline-block;
+    font-family: '华文琥珀', '微软雅黑', sans-serif;
   }
 }
 </style>
