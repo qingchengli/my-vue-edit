@@ -5,10 +5,13 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    tags: []
+    tags: [{
+      name: 'message.hello',
+      path: '/'
+    }]
   },
   mutations: {
-    addTag (state, obj) {
+    addTag(state, obj) {
       let isNew = true
       state.tags.forEach(item => {
         if (item.name === obj.name) {
@@ -19,7 +22,7 @@ const store = new Vuex.Store({
         state.tags.push(obj)
       }
     },
-    deleteTag (state, tag) {
+    deleteTag(state, tag) {
       state.tags.splice(state.tags.indexOf(tag), 1)
     }
   }

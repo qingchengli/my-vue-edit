@@ -11,7 +11,7 @@
       </el-aside>
       <el-main style="padding: 0">
         <el-row style="padding: 0 40px; margin: 20px 0 0px;" v-if="this.$route.path != '/404' && this.$route.path != '/login'">
-          <el-tag v-for="(item, index) in $store.state.tags" :key="item.id" closable style="cursor: pointer;" :class="{ activeTag: $route.path == item.path }" @click.native="changeTag(index, item.path)" @close="closeTag(item)">
+          <el-tag v-for="(item, index) in $store.state.tags" :key="item.id" closable style="cursor: pointer;" :class="{ activeTag: $route.path == item.path }" @click.native="changeTag(index, item.path)" @close="closeTag(index, item)">
             {{ $t(item.name) }}
           </el-tag>
         </el-row>
@@ -36,7 +36,10 @@ export default {
       this.ActiveNum = index
       this.$router.push({path: path})
     },
-    closeTag (tag) {
+    closeTag (index, tag) {
+      if (index === 0) {
+        return;
+      }
       if (tag.path === this.$route.path) {
         history.back(-1)
       }
@@ -68,5 +71,8 @@ export default {
 }
 .activeTag.el-tag .el-icon-close:hover{
   background: #faaeb0;
+}
+.el-tag:first-child .el-icon-close{
+  display: none;
 }
 </style>
